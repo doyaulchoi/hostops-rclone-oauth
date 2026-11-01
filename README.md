@@ -1,4 +1,4 @@
-# 1060 Drive Backup policy site
+# 1060 Drive Backup rclone policy site
 
 Static homepage, privacy policy, and terms for a single-operator rclone Google Drive backup OAuth client.
 

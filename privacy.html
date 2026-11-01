@@ -4,18 +4,18 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Privacy policy for the single-operator 1060 rclone Google Drive backup workflow.">
-  <title>Privacy Policy · 1060 Drive Backup</title>
+  <title>Privacy Policy · 1060 Drive Backup rclone</title>
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
   <header><div class="wrap bar">
-    <a class="brand" href="./">1060 Drive Backup</a>
+    <a class="brand" href="./">1060 Drive Backup rclone</a>
     <nav aria-label="Main navigation"><a href="./privacy.html" aria-current="page">Privacy</a><a href="./terms.html">Terms</a></nav>
   </div></header>
   <main class="wrap">
     <p class="date">Effective and last updated: November 1, 2026</p>
     <h1>Privacy Policy</h1>
-    <p>This policy covers the Google OAuth client and the single-operator rclone backup workflow documented on this site. The workflow is used for the operator’s own recovery copies; it is not offered as a public service.</p>
+    <p>This policy covers the 1060 Drive Backup rclone Google OAuth client and its single-operator backup workflow. It is used for the operator’s own recovery copies; it is not offered as a public service.</p>
 
     <h2>Google Drive access</h2>
     <p>The OAuth client requests <code>https://www.googleapis.com/auth/drive</code> (the full Drive scope). If you authorize it, Google can grant the client permission to read and manage all files in your Drive. This is broader than the current backup workflow needs. The current software is configured to list and operate on its dedicated backup area: it uploads encrypted backup runs and manifests, downloads files for SHA-256 comparison and isolated restore checks, and lists the configured remote to confirm availability. It does not use unrelated Drive content for advertising, analytics, or model training.</p>
