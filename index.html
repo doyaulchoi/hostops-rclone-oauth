@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Privacy and use information for a single-operator rclone Google Drive backup workflow.">
+  <title>1060 Drive Backup</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header><div class="wrap bar">
+    <a class="brand" href="./">1060 Drive Backup</a>
+    <nav aria-label="Main navigation"><a href="./privacy.html">Privacy</a><a href="./terms.html">Terms</a></nav>
+  </div></header>
+  <main class="wrap">
+    <p class="date">Personal backup utility · Updated November 1, 2026</p>
+    <h1>Encrypted Google Drive backups for one operator</h1>
+    <p class="lead">This site describes a private rclone backup workflow used by one operator to keep and verify recovery copies. It is not a hosted, multi-user backup service. Production OAuth publication lets any Google account attempt consent, but this software is configured for one operator. Visiting this site does not create an account or give anyone access to a backup.</p>
+
+    <section class="notice" aria-labelledby="scope-title">
+      <h2 id="scope-title">Read the Google Drive access request</h2>
+      <p>The OAuth client requests Google’s full Drive scope, <code>https://www.googleapis.com/auth/drive</code>. Google may therefore let the authorized client read and manage all files in the connected Drive account. The current backup software is configured to use a dedicated backup area for encrypted backup upload, listing, download, and restore checks. The permission itself is broader than that configured use.</p>
+    </section>
+
+    <h2>What the workflow does</h2>
+    <p>It creates allowlisted database and host-operations backups, encrypts backup file contents and file names locally with rclone crypt, uploads them to the operator’s Google Drive, and downloads them again to check the copy and test restoration. Folder names and some file metadata remain visible to Google Drive.</p>
+    <p>The OAuth refresh token and rclone encryption credentials stay in a host-local configuration file. They are excluded from the backup. Local recovery copies are plaintext while staged and are removed only after the encrypted Drive copy passes readback and restore verification; an unverified run is retained for investigation.</p>
+
+    <h2>Policies</h2>
+    <p>Read the <a href="./privacy.html">Privacy Policy</a> for the data handled, storage, encryption, and retention details, and the <a href="./terms.html">Terms of Use</a> for the personal-use limits.</p>
+    <p>Questions or privacy requests can be sent to the developer contact shown on the OAuth consent screen. Do not send backup files, passwords, or OAuth credentials in a support request.</p>
+
+    <h2>한국어 안내</h2>
+    <p>이 사이트는 운영자 한 명이 사용하는 개인용 rclone Google Drive 백업 절차를 설명합니다. 공개형 다중 사용자 백업 서비스가 아닙니다. OAuth 클라이언트는 Drive 전체 범위(<code>https://www.googleapis.com/auth/drive</code>)를 요청하므로 연결된 Drive의 모든 파일을 읽고 관리할 수 있는 권한을 받습니다. 실제 백업 작업은 지정된 백업 영역에서 암호화 백업을 올리고, 내려받아 무결성과 복원을 확인하도록 구성되어 있습니다.</p>
+    <p><a href="./privacy.html">개인정보 처리방침</a>과 <a href="./terms.html">이용 조건</a>을 확인하세요. 문의는 OAuth 동의 화면에 표시되는 개발자 연락처를 이용하세요.</p>
+  </main>
+  <footer class="wrap">Static information pages hosted on GitHub Pages. This site has no forms, analytics scripts, or third-party embeds.</footer>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Privacy policy for the single-operator 1060 rclone Google Drive backup workflow.">
+  <title>Privacy Policy · 1060 Drive Backup</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header><div class="wrap bar">
+    <a class="brand" href="./">1060 Drive Backup</a>
+    <nav aria-label="Main navigation"><a href="./privacy.html" aria-current="page">Privacy</a><a href="./terms.html">Terms</a></nav>
+  </div></header>
+  <main class="wrap">
+    <p class="date">Effective and last updated: November 1, 2026</p>
+    <h1>Privacy Policy</h1>
+    <p>This policy covers the Google OAuth client and the single-operator rclone backup workflow documented on this site. The workflow is used for the operator’s own recovery copies; it is not offered as a public service.</p>
+
+    <h2>Google Drive access</h2>
+    <p>The OAuth client requests <code>https://www.googleapis.com/auth/drive</code> (the full Drive scope). If you authorize it, Google can grant the client permission to read and manage all files in your Drive. This is broader than the current backup workflow needs. The current software is configured to list and operate on its dedicated backup area: it uploads encrypted backup runs and manifests, downloads files for SHA-256 comparison and isolated restore checks, and lists the configured remote to confirm availability. It does not use unrelated Drive content for advertising, analytics, or model training.</p>
+
+    <h2>Information in backups</h2>
+    <p>Backup runs contain allowlisted PostgreSQL database dumps, explicitly selected SQLite database files, checksums and manifests, and a limited allowlist of host operations configuration. Database dumps can contain service records and password hashes. The configured backup policy excludes Google OAuth tokens, rclone encryption secrets, SSH private keys, caches, temporary files, and runner diagnostics.</p>
+
+    <h2>Encryption and storage</h2>
+    <ul>
+      <li>Before upload, rclone crypt encrypts file contents and, using its standard default, file names. The current configuration leaves directory names unencrypted. Google Drive can also see ordinary storage metadata such as file sizes and modification times.</li>
+      <li>The OAuth refresh token and rclone encryption credentials are kept in a host-local rclone configuration owned by the operator’s local UID 1000. The backup service reads this configuration locally. The configuration file and its credentials are not included in backup runs.</li>
+      <li>A recovery copy is staged in plaintext on the operator-controlled external backup storage. Files are created with owner-only file permissions and owner-only directory permissions. A verified run is removed locally only after remote readback and restoration checks pass; failed or unverified runs are retained.</li>
+      <li>Encrypted Drive runs use unique paths and are currently retained indefinitely by the automated backup process. That process does not automatically delete old Drive runs. Revoking OAuth access does not delete copies already stored in Drive.</li>
+      <li>When available, a separate backup step may copy a recovery run to the operator-controlled main computer. This is not part of the Google OAuth connection and is not a third-party sharing feature.</li>
+    </ul>
+
+    <h2>Sharing and service providers</h2>
+    <p>The backup workflow does not sell Google user data, grant Drive access to other people, or change Drive sharing permissions. Google Drive is the cloud storage provider and receives encrypted backup files plus the unencrypted directory names and storage metadata described above. A separate step may copy a local recovery archive to the operator-controlled main computer when its connection prerequisites are available. GitHub Pages hosts these public policy pages; it does not receive backup contents. The static pages contain no forms, analytics code, cookies set by this site, or third-party embeds. GitHub may process ordinary web request data when serving the pages under its own policies.</p>
+
+    <h2>Retention and control</h2>
+    <p>You can revoke the OAuth grant in your Google Account security settings. Revocation stops future access but does not remove existing Drive backup files. The account owner can delete those files directly in Google Drive. The operator’s automated policy retains verified Drive runs indefinitely; local plaintext staging is deleted only after successful remote verification and restoration testing.</p>
+
+    <h2>Questions and privacy requests</h2>
+    <p>Contact the developer using the support contact shown on the OAuth consent screen. Please do not include backup files, passwords, crypt keys, OAuth tokens, or other sensitive material in a request.</p>
+
+    <h2>한국어 요약</h2>
+    <p>이 OAuth 앱은 Google Drive 전체 범위(<code>https://www.googleapis.com/auth/drive</code>)를 요청합니다. 따라서 승인하면 연결 앱이 Drive 전체 파일을 읽고 관리할 수 있는 권한이 생깁니다. 현재 백업 자동화는 지정된 백업 영역에서 백업을 올리고, 다시 내려받아 SHA-256 및 격리 복원을 확인하는 용도로만 구성되어 있습니다. 별도 단계가 연결 조건을 충족할 때 운영자가 관리하는 메인 컴퓨터에 로컬 복구 사본을 복사할 수 있습니다.</p>
+    <p>백업에는 PostgreSQL 덤프, 허용된 SQLite 파일, 체크섬·매니페스트, 제한된 호스트 운영 설정이 포함될 수 있습니다. 데이터베이스에는 서비스 레코드와 비밀번호 해시가 들어갈 수 있습니다. OAuth 토큰, rclone 암호화 비밀값, SSH 개인 키, 캐시와 임시파일은 백업에서 제외합니다. 업로드 전 파일 내용과 파일명은 rclone crypt로 암호화하지만 폴더명과 일부 저장 메타데이터는 Google에 보입니다. 로컬 복구용 사본은 검증 전까지 외부 저장장치에 평문으로 보관하며, 원격 읽기와 복원 검증에 성공한 경우에만 지웁니다. 검증되지 않은 실행은 보존합니다.</p>
+    <p>Drive의 암호화 백업은 현재 자동으로 무기한 보존되며 이 자동화는 오래된 Drive 사본을 삭제하지 않습니다. OAuth 권한을 철회해도 이미 저장된 파일은 삭제되지 않습니다. 문의는 OAuth 동의 화면의 개발자 지원 연락처를 이용하세요.</p>
+  </main>
+  <footer class="wrap"><a href="./">Home</a> · <a href="./terms.html">Terms of Use</a></footer>
+</body>
+</html>
