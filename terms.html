@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Personal-use terms for the 1060 rclone Google Drive backup workflow.">
+  <title>Terms of Use · 1060 Drive Backup</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header><div class="wrap bar">
+    <a class="brand" href="./">1060 Drive Backup</a>
+    <nav aria-label="Main navigation"><a href="./privacy.html">Privacy</a><a href="./terms.html" aria-current="page">Terms</a></nav>
+  </div></header>
+  <main class="wrap">
+    <p class="date">Effective and last updated: November 1, 2026</p>
+    <h1>Terms of Use</h1>
+    <p>These terms describe the personal-use 1060 Drive Backup workflow documented on this site. It is operated by one person for that operator’s own recovery copies and is not a hosted or multi-user backup service.</p>
+
+    <h2>Authorization and permitted use</h2>
+    <p>Only authorize the OAuth client for a Google account that you own or are explicitly authorized to administer. The client requests Google’s full Drive scope, which can permit access to all files in that account. The current software is configured to use a dedicated backup area, but the permission is broader than that use. Do not use this app to access another person’s Drive data without their authorization.</p>
+
+    <h2>Your data and backup copies</h2>
+    <p>You retain ownership of your data. The workflow encrypts backup contents and file names locally before Drive upload; directory names and some metadata remain visible to Google. A local plaintext recovery copy is staged until the remote copy and restore checks pass. Verified Drive runs are retained indefinitely by the current automation, and revoking OAuth access does not delete stored copies. You are responsible for reviewing and deleting copies you no longer want and for keeping any required encryption credentials safe.</p>
+
+    <h2>Availability and recovery</h2>
+    <p>This personal utility is provided without a service-level commitment or guarantee that every backup or restoration will succeed. The automated checks reduce risk but do not replace maintaining independent recovery copies and periodically validating recovery procedures. Do not delete an original or another backup solely because an upload was attempted; rely on a completed readback and restoration check.</p>
+
+    <h2>Changes and termination</h2>
+    <p>The operator may change or stop the workflow. You may revoke its OAuth access through your Google Account at any time. Revocation prevents future access but does not remove existing files from Google Drive or other copies; those must be deleted from their storage locations.</p>
+
+    <h2>Contact</h2>
+    <p>Use the developer contact shown on the OAuth consent screen for questions about these terms.</p>
+
+    <h2>한국어 요약</h2>
+    <p>이 절차는 운영자 한 명이 자신의 복구 사본을 만들기 위한 개인용 도구이며 다중 사용자 백업 서비스가 아닙니다. OAuth 클라이언트는 Drive 전체 범위를 요청하므로 본인이 소유하거나 관리 권한을 받은 계정에만 승인해야 합니다. 백업 내용과 파일명은 Drive에 올리기 전에 암호화되지만 폴더명과 일부 메타데이터는 보입니다. 원격 사본과 복원 검증 전 로컬에는 평문 복구 사본이 남습니다. 현재 자동화는 검증된 Drive 실행을 무기한 보관하고, OAuth 철회는 기존 사본을 지우지 않습니다.</p>
+    <p>백업 또는 복원이 언제나 성공한다는 보장은 없습니다. 업로드 시도만으로 원본이나 다른 백업을 삭제하지 말고, 원격 읽기와 복원 검증이 끝났는지 확인하세요. 문의는 OAuth 동의 화면에 표시되는 개발자 연락처를 이용하세요.</p>
+  </main>
+  <footer class="wrap"><a href="./">Home</a> · <a href="./privacy.html">Privacy Policy</a></footer>
+</body>
+</html>
